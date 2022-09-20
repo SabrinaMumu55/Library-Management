@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS "Account";
+CREATE TABLE "Account" ("Username" CHAR PRIMARY KEY  NOT NULL , "Name" CHAR, "Password" INTEGER, "Sec_Q" CHAR, "Answer" CHAR);
+INSERT INTO "Account" VALUES('ishfaq','Ishfaq Rahman',1234,'What is your nick name?','Ishu');
+INSERT INTO "Account" VALUES('Mumu','Sabrina Shreya Mumu',12345,'What is your School name?','VNC');
+INSERT INTO "Account" VALUES('mash','Mashfiq Rahman',123456,'What is your nick name?','mushu');
+DROP TABLE IF EXISTS "Book";
+CREATE TABLE "Book" ("Book_ID" INTEGER PRIMARY KEY  NOT NULL ,"Name" CHAR,"Edition" INTEGER,"Publisher" CHAR DEFAULT (null) ,"Price" INTEGER,"pages" INTEGER);
+INSERT INTO "Book" VALUES(398,'Physics','1st','NCTB',250,200);
+INSERT INTO "Book" VALUES(599,'Chemistry','1st','NCTB',250,200);
+DROP TABLE IF EXISTS "IssueB";
+CREATE TABLE "IssueB" ("Book_ID" INTEGER PRIMARY KEY  NOT NULL , "Name" CHAR, "Edition" INTEGER, "Publisher" CHAR, "Price" INTEGER, "Pages" INTEGER, "Student_Id" INTEGER, "SName" CHAR, "FName" CHAR, "Course" CHAR, "Branch" CHAR, "Year" INTEGER, "Semester" INTEGER, "DateOfIssue" INTEGER);
+DROP TABLE IF EXISTS "Return";
+CREATE TABLE "Return" ("Student_Id" INTEGER PRIMARY KEY  NOT NULL ,"Name" CHAR,"FName" CHAR,"Course" CHAR,"Branch" CHAR,"Year" INTEGER,"Semester" INTEGER,"Book_ID" INTEGER,"BName" CHAR,"Edition" INTEGER DEFAULT (null) ,"Publisher" CHAR,"Price" INTEGER,"Pages" INTEGER,"DOI" INTEGER,"DOR" INTEGER);
+INSERT INTO "Return" VALUES(126,'Ishfaq rahman','Faizur Rahman','B Sc','Uttara',2,1,398,'Physics','1st','NCTB',250,200,200,'Oct 9, 2019');
+DROP TABLE IF EXISTS "Student";
+CREATE TABLE "Student" ("Student_ID" INTEGER PRIMARY KEY  NOT NULL , "Name" CHAR, "Father" CHAR, "Course" CHAR, "Branch" CHAR, "Year" INTEGER, "Semester" INTEGER);
+INSERT INTO "Student" VALUES(126,'Ishfaq rahman','Faizur Rahman','B Sc','Uttara',2,1);
